@@ -1,0 +1,14 @@
+site_name: Laboratorios Eafit-Software
+# site_url: https://pages.gitlab.io/mkdocs
+site_dir: public
+repo_url: https://github.com/EAFIT-SoftwareTesting/TechLabs.git
+
+nav:
+- Inicio: home.md
+- Análisis estático:
+  - static-code.md
+
+theme: readthedocs
+extra:
+  version: 6.0.0
+

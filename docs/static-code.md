@@ -1,9 +1,3 @@
----
-layout: page
-title: Análisis estático
-permalink: docs/static-code/
----
-
 # Laboratorio: Análisis Estático de Código con SonarCloud y Python en GitHub Codespaces
 
 ## **1. Preparar el Repositorio**
