@@ -1,8 +1,8 @@
-<!-- ---
+---
 layout: page
 title: Análisis estático
-permalink: /static-code/
---- -->
+permalink: docs/static-code/
+---
 
 # Laboratorio: Análisis Estático de Código con SonarCloud y Python en GitHub Codespaces
 
@@ -53,6 +53,7 @@ __pycache__/
 3. Copia el token de acceso generado por SonarCloud.
 
 ### Configurar `sonar-project.properties`
+
 Crea un archivo `sonar-project.properties` en la raíz del repositorio con el siguiente contenido:
 
 ```
@@ -127,6 +128,7 @@ jobs:
 2. Asegúrate de que el entorno incluye Python 3.10 y las extensiones necesarias.
 
 ### Probar con SonarLint
+
 Usa la extensión **SonarLint** en VSCode para obtener retroalimentación local sobre problemas de código.
 
 ---

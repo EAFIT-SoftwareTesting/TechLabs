@@ -1,8 +1,8 @@
-<!-- ---
+---
 layout: page
 title: Inicio
-permalink: /home/
---- -->
+permalink: docs/home/
+---
 
 # Mi Laboratorio de GitHub Pages
 
