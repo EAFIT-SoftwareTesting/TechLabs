@@ -1,7 +1,7 @@
 title: TechLabs Eafit-Software Testing
 # With GitHub Pages Gem
-# remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
-theme: minima
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
+# theme: minima
 
 # # Configuración de navegación
 # collections:

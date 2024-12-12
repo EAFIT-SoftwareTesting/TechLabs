@@ -1,8 +1,8 @@
----
+<!-- ---
 layout: page
 title: Análisis estático
 permalink: /static-code/
----
+--- -->
 
 # Laboratorio: Análisis Estático de Código con SonarCloud y Python en GitHub Codespaces
 
