@@ -2,3 +2,15 @@ title: TechLabs Eafit-Software Testing
 # With GitHub Pages Gem
 remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 # theme: just-the-docs
+
+# Configuración de navegación
+collections:
+  pages:
+    output: true
+
+# Enlace para el menú
+menu:
+  - text: Inicio
+    link: /home
+  - text: Análisis estático
+    link: /static-code
