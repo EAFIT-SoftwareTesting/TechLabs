@@ -3,14 +3,14 @@ title: TechLabs Eafit-Software Testing
 # remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 theme: minima
 
-# Configuración de navegación
-collections:
-  pages:
-    output: true
+# # Configuración de navegación
+# collections:
+#   pages:
+#     output: true
 
-# Enlace para el menú
-menu:
-  - text: Inicio
-    link: /home
-  - text: Análisis estático
-    link: /static-code
+# # Enlace para el menú
+# menu:
+#   - text: Inicio
+#     link: /home
+#   - text: Análisis estático
+#     link: /static-code
