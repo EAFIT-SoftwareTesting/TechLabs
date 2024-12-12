@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia a la rama principal de tu repositorio
+      - main  # Ajusta a tu rama principal
 
 jobs:
   deploy:
@@ -23,4 +23,9 @@ jobs:
           pip install mkdocs mkdocs-material
 
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        env:
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          mkdocs gh-deploy --force --remote-branch gh-pages --remote-url https://x-access-token:${TOKEN}@github.com/EAFIT-SoftwareTesting/TechLabs.git
