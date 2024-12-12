@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,10 +22,13 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material
 
-      - name: Deploy to GitHub Pages
+      - name: Configure Git for Deployment
         env:
           TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          mkdocs gh-deploy --force --remote-branch gh-pages --remote-url https://x-access-token:${TOKEN}@github.com/EAFIT-SoftwareTesting/TechLabs.git
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/EAFIT-SoftwareTesting/TechLabs.git
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --remote-branch gh-pages --force
