@@ -1,2 +1,2 @@
 # TechLabs
-Pryecto con github page para los laboratrios del curso.
+Pryecto con github page para los laboratrios del curso Software Testing.
