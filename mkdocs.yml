@@ -4,7 +4,7 @@ site_dir: public
 repo_url: https://github.com/EAFIT-SoftwareTesting/TechLabs.git
 
 nav:
-- Inicio: home.md
+- Inicio: docs/home.md
 - Análisis estático:
   - static-code.md
 
