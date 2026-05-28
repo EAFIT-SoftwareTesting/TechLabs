@@ -3,7 +3,16 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Ajusta a tu rama principal
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -11,24 +20,24 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       - name: Install MkDocs
-        run: |
-          pip install mkdocs mkdocs-material
-      - name: build mkdocs
+        run: pip install mkdocs mkdocs-material
+
+      - name: Build site
         run: mkdocs build --strict --verbose
-        
 
-    #   - name: Upload artifact
-    #     uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
-# Deployment job
   deploy:
     environment:
       name: github-pages
@@ -39,17 +48,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    #   - name: Configure Git for Deployment
-    #     env:
-    #       TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    #     run: |
-    #       git config --global user.name "github-actions[bot]"
-    #       git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    #       git remote set-url origin https://x-access-token:${TOKEN}@github.com/EAFIT-SoftwareTesting/TechLabs.git
-
-    #   - name: Deploy to GitHub Pages
-    #     run: mkdocs gh-deploy
-    #     # run: mkdocs gh-deploy --remote-branch gh-pages --force
         
